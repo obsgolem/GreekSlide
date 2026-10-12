@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Learn Greek With Slides</title>
+    <style>
+        html,
+        body {
+            margin: 0;
+            height: 100%;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    </style>
+</head>
+
+<body>
+    {% for presentation in presentations %}
+    <a href="{{ presentation.slides[0].url.name }}">{{ presentation.title }}</a>
+    {% endfor %}
+</body>
+
+</html>
