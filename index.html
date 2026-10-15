@@ -15,13 +15,19 @@
             justify-content: center;
             align-items: center;
         }
+
+        li {
+            list-style-type: none;
+        }
     </style>
 </head>
 
 <body>
-    {% for presentation in presentations %}
-    <a href="{{ presentation.slides[0].url.name }}">{{ presentation.title }}</a>
-    {% endfor %}
+    <ul>
+        {% for presentation in presentations %}
+        <li><a href="{{ presentation.slides[0].url.name }}">{{ presentation.title }}</a></li>
+        {% endfor %}
+    </ul>
 </body>
 
 </html>

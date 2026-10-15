@@ -71,4 +71,5 @@ for file in args.path.rglob("*.md"):
     convert_one(file)
 
 with (args.output / "index.html").open("w") as f:
+    all_slides = sorted(all_slides, key=lambda x: x.title)
     f.write(index.render(presentations=all_slides))
